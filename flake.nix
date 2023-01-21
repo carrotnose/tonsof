@@ -12,7 +12,10 @@
       let pkgs = nixpkgs.legacyPackages.${system}; in
         {
           devShells.default = pkgs.mkShell {
-            buildInputs = with pkgs; [python310Packages.prompt-toolkit];
+            buildInputs = with pkgs; [
+              python310Packages.prompt-toolkit
+              python310Packages.appdirs
+              ];
           };
         }
     );
